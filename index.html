@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking Website</title>
+
+    <!-- Local Tailwind setup -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-color-primary text-color-white tracking-wider">
+
+    <header>
+        <nav class="container flex justify-between items-center py-5">
+
+            <!-- Logo -->
+            <div class="text-color-secondary font-bold text-3xl">
+                <a href="#home">
+                    <span class="text-color-white">L</span> <span>Ally</span> <span class="text-color-white">M</span>
+                </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div>
+                <ul class="hidden lg:flex items-center space-x-6">
+                    <li><a href="#home" class="hover:text-color-secondary ease-in duration-200">Home</a></li>
+                    <li><a href="#features" class="hover:text-color-secondary ease-in duration-200">Features</a></li>
+                    <li><a href="#testimonial" class="hover:text-color-secondary ease-in duration-200">Testimonial</a></li>
+                    <li><a href="#blog" class="hover:text-color-secondary ease-in duration-200">Blog</a></li>
+                    <li><a href="#contact" class="hover:text-color-secondary ease-in duration-200">Contact</a></li>
+                    <li><button class="bg-color-secondary px-9 py-3 rounded-md capitalize font-bold hover:opacity-80 ease-in duration-200">Free Trial</button></li>
+                </ul>
+            </div>
+
+            <!-- Mobile Screen Menu Button -->
+            <div id="hamburger" class="lg:hidden cursor-pointer z-50">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <!-- Mobile Navigation Menu -->
+            <div id="menu" class="hidden bg-color-primary-dark h-screen absolute inset-0">
+                <ul class="h-full grid place-items-center space-y-6">
+                    <li><a href="#home" class="hover:text-color-secondary ease-in duration-200">Home</a></li>
+                    <li><a href="#features" class="hover:text-color-secondary ease-in duration-200">Features</a></li>
+                    <li><a href="#testimonial" class="hover:text-color-secondary ease-in duration-200">Testimonial</a></li>
+                    <li><a href="#blog" class="hover:text-color-secondary ease-in duration-200">Blog</a></li>
+                    <li><a href="#contact" class="hover:text-color-secondary ease-in duration-200">Contact</a></li>
+                    <li><button class="bg-color-secondary px-9 py-3 rounded-md capitalize font-bold hover:opacity-80 ease-in duration-200">Free Trial</button></li>
+                </ul>
+            </div>
+
+        </nav>
+    </header>
+
+    <!-- Script for Mobile Menu -->
+    <script> 
+        // Toggle mobile menu
+        const hamburger = document.querySelector('#hamburger');
+        const menu = document.querySelector('#menu');
+        const faSolid = document.querySelector('.fa-solid');
+        const hLinks = document.querySelectorAll('#menu a'); // Select all links in the menu
+
+        hamburger.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            faSolid.classList.toggle('fa-xmark');
+        });
+
+        // Close menu when a link is clicked
+        hLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+                faSolid.classList.toggle('fa-xmark');
+            });
+        });
+    </script>
+
+</body>
+</html>
